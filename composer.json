@@ -1,6 +1,7 @@
 {
     "name": "patrickkusebauch/nette-psalm-plugin",
     "description": "Psalm plugin for Nette Framework",
+    "keywords": ["php", "code", "inspection", "psalm", "plugin", "psalm-plugin", "static analysis", "static-analysis", "extension"],
     "type": "psalm-plugin",
     "license": "MIT",
     "authors": [
@@ -10,11 +11,7 @@
         }
     ],
     "require": {
-        "vimeo/psalm": "dev-master"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^7.2",
-        "squizlabs/php_codesniffer": "^3.3"
+        "vimeo/psalm": "^3.6.2 || dev-master"
     },
     "extra": {
         "psalm" : {
@@ -25,14 +22,5 @@
         "psr-4": {
             "PatrickKusebauch\\NettePsalmPlugin\\": ["."]
         }
-    },
-    "scripts" : {
-        "check": [
-            "@cs-check",
-            "@analyze"
-        ],
-        "analyze": "psalm",
-        "cs-check": "phpcs",
-        "cs-fix": "phpcbf"
     }
 }
