@@ -1,12 +1,12 @@
 {
-    "name": "weirdan/psalm-plugin-skeleton",
-    "description": "Template to create psalm-plugin projects from",
+    "name": "patrickkusebauch/nette-psalm-plugin",
+    "description": "Psalm plugin for Nette Framework",
     "type": "psalm-plugin",
     "license": "MIT",
     "authors": [
         {
-            "name": "Bruce Weirdan",
-            "email": "weirdan@gmail.com"
+            "name": "Patrick Kusebauch",
+            "email": "patrick.kusebauch@gmail.com"
         }
     ],
     "require": {
@@ -18,29 +18,21 @@
     },
     "extra": {
         "psalm" : {
-            "pluginClass": "Weirdan\\PsalmPluginSkeleton\\Plugin"
+            "pluginClass": "PatrickKusebauch\\NettePsalmPlugin\\Plugin"
         }
     },
     "autoload": {
         "psr-4": {
-            "Weirdan\\PsalmPluginSkeleton\\": ["."]
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Weirdan\\PsalmPluginSkeleton\\Tests\\": "tests"
+            "PatrickKusebauch\\NettePsalmPlugin\\": ["."]
         }
     },
     "scripts" : {
         "check": [
             "@cs-check",
-            "@test",
             "@analyze"
         ],
         "analyze": "psalm",
         "cs-check": "phpcs",
-        "cs-fix": "phpcbf",
-        "test": "phpunit --colors=always",
-        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
+        "cs-fix": "phpcbf"
     }
 }
