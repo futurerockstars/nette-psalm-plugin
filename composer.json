@@ -1,7 +1,7 @@
 {
     "name": "patrickkusebauch/nette-psalm-plugin",
     "description": "Psalm plugin for Nette Framework",
-    "keywords": ["php", "code", "inspection", "psalm", "plugin", "psalm-plugin", "static analysis", "static-analysis", "extension"],
+    "keywords": ["php", "code", "inspection", "psalm", "plugin", "psalm-plugin", "static analysis", "static-analysis", "extension", "nette", "latte", "Nette Framework"],
     "type": "psalm-plugin",
     "license": "MIT",
     "authors": [
@@ -12,6 +12,9 @@
     ],
     "require": {
         "vimeo/psalm": "^3.6.2 || dev-master"
+    },
+    "suggest": {
+        "phpstan/phpstan-nette": "More stub files for Nette Framework"
     },
     "extra": {
         "psalm" : {
