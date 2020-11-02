@@ -1,5 +1,5 @@
 {
-    "name": "patrickkusebauch/nette-psalm-plugin",
+    "name": "futurerockstars/nette-psalm-plugin",
     "description": "Psalm plugin for Nette Framework",
     "keywords": ["php", "code", "inspection", "psalm", "plugin", "psalm-plugin", "static analysis", "static-analysis", "extension", "nette", "latte", "Nette Framework"],
     "type": "psalm-plugin",
@@ -7,7 +7,7 @@
     "authors": [
         {
             "name": "Patrick Kusebauch",
-            "email": "patrick.kusebauch@gmail.com"
+            "email": "patrick@futurerockstars.cz"
         }
     ],
     "require": {
@@ -18,12 +18,12 @@
     },
     "extra": {
         "psalm" : {
-            "pluginClass": "PatrickKusebauch\\NettePsalmPlugin\\Plugin"
+            "pluginClass": "FutureRockstars\\NettePsalmPlugin\\Plugin"
         }
     },
     "autoload": {
         "psr-4": {
-            "PatrickKusebauch\\NettePsalmPlugin\\": ["."]
+            "FutureRockstars\\NettePsalmPlugin\\": ["."]
         }
     }
 }

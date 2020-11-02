@@ -1,6 +1,6 @@
 <?php
 
-namespace PatrickKusebauch\NettePsalmPlugin;
+namespace FutureRockstars\NettePsalmPlugin;
 
 use SimpleXMLElement;
 use Psalm\Plugin\PluginEntryPointInterface;
