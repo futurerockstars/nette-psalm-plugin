@@ -5,6 +5,5 @@ A Psalm plugin, that adds stub files for Nette Framework classes with more preci
 ## Future Rockstars
 
 <img src="https://avatars2.githubusercontent.com/u/73701756?s=400&u=38507be413a92d826aeb08f6188beabea69a9830&v=4&s" width="200" height="200" alt="Future Rockstars">
-![Future Rockstars](https://avatars2.githubusercontent.com/u/73701756?s=400&u=38507be413a92d826aeb08f6188beabea69a9830&v=4&s=200)
 
 [www.futurerockstars.cz](https://www.futurerockstars.cz)
