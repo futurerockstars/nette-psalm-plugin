@@ -20,4 +20,24 @@ abstract class Component extends Nette\ComponentModel\Container implements ISign
 	{
 	}
 
+	/**
+	 * Permanently redirects to presenter, action or signal.
+	 * @param  string   $destination in format "[//] [[[module:]presenter:]action | signal! | this] [#fragment]"
+	 * @param  array|mixed  $args
+	 * @throws Nette\Application\AbortException
+     * @return no-return
+	 */
+	public function redirectPermanent(string $destination, $args = []): void
+	{
+	}
+
+	/**
+	 * Throws HTTP error.
+	 * @throws Nette\Application\BadRequestException
+     * @return no-return
+	 */
+	public function error(string $message = '', int $httpCode = Nette\Http\IResponse::S404_NOT_FOUND): void
+	{
+	}
+
 }

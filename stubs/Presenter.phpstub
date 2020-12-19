@@ -1,0 +1,78 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Nette\Application\UI;
+
+use Nette;
+use Nette\Application;
+
+abstract class Presenter extends Control implements Application\IPresenter
+{
+
+	/**
+	 * Redirect to another URL and ends presenter execution.
+	 * @throws Nette\Application\AbortException
+     * @return no-return
+	 */
+	public function redirectUrl(string $url, int $httpCode = null): void
+    {
+    }
+
+	/**
+	 * Sends JSON data to the output.
+	 * @param  mixed  $data
+	 * @throws Nette\Application\AbortException
+     * @return no-return
+	 */
+	public function sendJson($data): void
+	{
+	}
+
+	/**
+	 * Sends AJAX payload to the output.
+	 * @throws Nette\Application\AbortException
+     * @return no-return
+	 */
+	public function sendPayload(): void
+	{
+	}
+
+	/**
+	 * Sends response and terminates presenter.
+	 * @throws Nette\Application\AbortException
+     * @return no-return
+	 */
+	public function sendResponse(Application\IResponse $response): void
+	{
+	}
+
+	/**
+	 * @throws Nette\Application\BadRequestException if no template found
+	 * @throws Nette\Application\AbortException
+     * @return no-return
+	 */
+	public function sendTemplate(): void
+	{
+	}
+
+	/**
+	 * Correctly terminates presenter.
+	 * @throws Nette\Application\AbortException
+     * @return no-return
+	 */
+	public function terminate(): void
+	{
+	}
+
+	/**
+	 * Forward to another presenter or action.
+	 * @param  string|Nette\Application\Request  $destination
+	 * @param  array|mixed  $args
+	 * @throws Nette\Application\AbortException
+     * @return no-return
+	 */
+	public function forward($destination, $args = []): void
+    {
+    }
+}
