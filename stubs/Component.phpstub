@@ -8,6 +8,9 @@ use Nette;
 
 abstract class Component extends Nette\ComponentModel\Container implements ISignalReceiver, IStatePersistent, \ArrayAccess
 {
+    public function getPresenter(): Presenter
+    {
+    }
 
 	/**
 	 * Redirect to another presenter, action or signal.

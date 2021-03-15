@@ -5,8 +5,13 @@ namespace FutureRockstars\NettePsalmPlugin;
 use SimpleXMLElement;
 use Psalm\Plugin\PluginEntryPointInterface;
 use Psalm\Plugin\RegistrationInterface;
+use PhpParser\Node;
+use Psalm\Codebase;
+use Psalm\FileSource;
+use Psalm\Plugin\Hook\AfterClassLikeVisitInterface;
+use Psalm\Storage\ClassLikeStorage;
 
-class Plugin implements PluginEntryPointInterface
+class Plugin implements PluginEntryPointInterface, AfterClassLikeVisitInterface
 {
     public function __invoke(RegistrationInterface $psalm, ?SimpleXMLElement $config = null): void
     {
@@ -30,4 +35,24 @@ class Plugin implements PluginEntryPointInterface
         return $files;
     }
 
+    public static function afterClassLikeVisit(
+        Node\Stmt\ClassLike $stmt,
+        ClassLikeStorage $storage,
+        FileSource $statements_source,
+        Codebase $codebase,
+        array &$file_replacements = []
+    ) {
+        if ($storage->user_defined
+            && !$storage->is_interface
+            && \class_exists($storage->name)
+        ) {
+            $reflection = new ReflectionClass($storage->name);
+            if($reflection->isSubclassOf(Nette\Application\UI\Control::class)
+               || $reflection->isSubclassOf(Nette\Bridges\ApplicationLatte\Template::class)
+            ) {
+                $storage->suppressed_issues[] = 'PropertyNotSetInConstructor';
+            }
+
+        }
+    }
 }

@@ -75,4 +75,36 @@ abstract class Presenter extends Control implements Application\IPresenter
 	public function forward($destination, $args = []): void
     {
     }
+
+
+    /**
+     * @param \Reflector $element
+     * @throws \Nette\Application\BadRequestException
+     * @throws \Nette\Application\AbortException
+     */
+    public function checkRequirements($element): void
+    {
+
+    }
+
+    /**
+     * @throws \Nette\Application\BadRequestException
+     * @throws \Nette\Application\AbortException
+     */
+    public function startup(): void
+    {
+    }
+
+    /**
+     * @psalm-template T of ?string
+     * @psalm-param T $namespace
+     * @psalm-return (T is null ? \Nette\Http\Session : \Nette\Http\SessionSection)
+     * @phpstan-param ?string $namespace
+     * @phpstan-template T
+     * @phpstan-return mixed
+     */
+    final public function getSession(string $namespace = null)
+    {
+    }
+
 }

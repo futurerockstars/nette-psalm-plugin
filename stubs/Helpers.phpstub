@@ -1,0 +1,15 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Nette\Application;
+
+final class Helpers
+{
+    /**
+     * @return array{string, string, string}
+     */
+    public static function splitName(string $name): array
+    {
+    }
+}

@@ -1,0 +1,18 @@
+<?php declare(strict_types = 1);
+
+namespace Nette\DI;
+
+use Nette;
+
+class Container
+{
+	/**
+     * @template T
+     * @psalm-param class-string<T> $type
+	 * @psalm-return T
+	 * @throws MissingServiceException
+	 */
+	public function getByType(string $type, bool $throw = true)
+    {
+    }
+}
