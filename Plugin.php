@@ -2,6 +2,8 @@
 
 namespace FutureRockstars\NettePsalmPlugin;
 
+use Nette\Application\UI\Control;
+use Nette\Bridges\ApplicationLatte\Template;
 use SimpleXMLElement;
 use Psalm\Plugin\PluginEntryPointInterface;
 use Psalm\Plugin\RegistrationInterface;
@@ -17,15 +19,15 @@ class Plugin implements PluginEntryPointInterface, AfterClassLikeVisitInterface
     {
         foreach ($this->getStubFiles() as $file) {
             $psalm->addStubFile($file);
-            $psalm->registerHooksFromClass(self::class);
         }
+        $psalm->registerHooksFromClass(self::class);
     }
     /** @return array<string> */
     private function getStubFiles(): array
     {
         $phpstan = self::rglob(__DIR__ . '/../../phpstan/phpstan-nette/stubs/*/*.stub') ?: [];
         $mine = glob(__DIR__.'/stubs/*.phpstub') ?: [];
-        return $phpstan + $mine;
+        return $mine + $phpstan;
     }
 
     private static function rglob($pattern, $flags = 0) {
@@ -48,8 +50,8 @@ class Plugin implements PluginEntryPointInterface, AfterClassLikeVisitInterface
             && \class_exists($storage->name)
         ) {
             $reflection = new \ReflectionClass($storage->name);
-            if($reflection->isSubclassOf(\Nette\Application\UI\Control::class)
-               || $reflection->isSubclassOf(\Nette\Bridges\ApplicationLatte\Template::class)
+            if($reflection->isSubclassOf(Control::class)
+               || $reflection->isSubclassOf(Template::class)
             ) {
                 $storage->suppressed_issues[] = 'PropertyNotSetInConstructor';
             }
