@@ -17,6 +17,7 @@ class Plugin implements PluginEntryPointInterface, AfterClassLikeVisitInterface
     {
         foreach ($this->getStubFiles() as $file) {
             $psalm->addStubFile($file);
+            $psalm->registerHooksFromClass(self::class);
         }
     }
     /** @return array<string> */
