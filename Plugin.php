@@ -46,9 +46,9 @@ class Plugin implements PluginEntryPointInterface, AfterClassLikeVisitInterface
             && !$storage->is_interface
             && \class_exists($storage->name)
         ) {
-            $reflection = new ReflectionClass($storage->name);
-            if($reflection->isSubclassOf(Nette\Application\UI\Control::class)
-               || $reflection->isSubclassOf(Nette\Bridges\ApplicationLatte\Template::class)
+            $reflection = new \ReflectionClass($storage->name);
+            if($reflection->isSubclassOf(\Nette\Application\UI\Control::class)
+               || $reflection->isSubclassOf(\Nette\Bridges\ApplicationLatte\Template::class)
             ) {
                 $storage->suppressed_issues[] = 'PropertyNotSetInConstructor';
             }
