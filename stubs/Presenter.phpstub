@@ -99,9 +99,6 @@ abstract class Presenter extends Control implements Application\IPresenter
      * @psalm-template T of ?string
      * @psalm-param T $namespace
      * @psalm-return (T is null ? \Nette\Http\Session : \Nette\Http\SessionSection)
-     * @phpstan-param ?string $namespace
-     * @phpstan-template T
-     * @phpstan-return mixed
      */
     final public function getSession(string $namespace = null)
     {
