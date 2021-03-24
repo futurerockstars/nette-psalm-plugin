@@ -37,7 +37,7 @@ abstract class Presenter extends Control implements Application\IPresenter
 
 	/**
 	 * @throws Nette\Application\AbortException
-     * @psalm-param Application\IResponse&Application\Response $response
+     * @psalm-param Application\IResponse|Application\Response $response
      * @return no-return
 	 */
 	public function sendResponse($response): void
