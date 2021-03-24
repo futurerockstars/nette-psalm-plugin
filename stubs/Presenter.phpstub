@@ -11,7 +11,6 @@ abstract class Presenter extends Control implements Application\IPresenter
 {
 
 	/**
-	 * Redirect to another URL and ends presenter execution.
 	 * @throws Nette\Application\AbortException
      * @return no-return
 	 */
@@ -20,7 +19,6 @@ abstract class Presenter extends Control implements Application\IPresenter
     }
 
 	/**
-	 * Sends JSON data to the output.
 	 * @param  mixed  $data
 	 * @throws Nette\Application\AbortException
      * @return no-return
@@ -30,7 +28,6 @@ abstract class Presenter extends Control implements Application\IPresenter
 	}
 
 	/**
-	 * Sends AJAX payload to the output.
 	 * @throws Nette\Application\AbortException
      * @return no-return
 	 */
@@ -39,11 +36,11 @@ abstract class Presenter extends Control implements Application\IPresenter
 	}
 
 	/**
-	 * Sends response and terminates presenter.
 	 * @throws Nette\Application\AbortException
+     * @psalm-param Application\IResponse&Application\Response $response
      * @return no-return
 	 */
-	public function sendResponse(Application\IResponse $response): void
+	public function sendResponse($response): void
 	{
 	}
 
@@ -57,7 +54,6 @@ abstract class Presenter extends Control implements Application\IPresenter
 	}
 
 	/**
-	 * Correctly terminates presenter.
 	 * @throws Nette\Application\AbortException
      * @return no-return
 	 */
@@ -66,7 +62,6 @@ abstract class Presenter extends Control implements Application\IPresenter
 	}
 
 	/**
-	 * Forward to another presenter or action.
 	 * @param  string|Nette\Application\Request  $destination
 	 * @param  array|mixed  $args
 	 * @throws Nette\Application\AbortException
